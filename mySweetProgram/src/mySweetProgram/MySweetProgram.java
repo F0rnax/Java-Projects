@@ -1,17 +1,22 @@
 package mySweetProgram;
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.*;
 
 public class MySweetProgram {
 
-	public static void main(String[] args) {
-		Scanner in = new Scanner(System.in);
+	public static void main(String[] args) throws FileNotFoundException {
+		Scanner in = new Scanner(new File("src/students.txt"));
 		
-		int i = 0; //Initialization
-		do {
-			System.out.println("i is: " + i);
-			i++; //Update
-		} while(i < 10);
+		List<String> students = new ArrayList<String>();
+		
+		while(in.hasNextLine()) {
+			students.add(in.nextLine());
+		}
+		
+		for(int i = 0; i < students.size(); i++) {
+			System.out.println("Name: " + students.get(i));
+		}
 		in.close();
 	}
-
 }
