@@ -5,18 +5,15 @@ import java.util.*;
 
 public class MySweetProgram {
 
-	public static void main(String[] args) throws FileNotFoundException {
-		Scanner in = new Scanner(new File("src/students.txt"));
-		
-		List<String> students = new ArrayList<String>();
-		
-		while(in.hasNextLine()) {
-			students.add(in.nextLine());
-		}
-		
-		for(int i = 0; i < students.size(); i++) {
-			System.out.println("Name: " + students.get(i));
-		}
-		in.close();
+
+	public static void main(String[] args){
+
+		LinkedList<String> names = new LinkedList<String>();
+		names.push("Isaac");
+		names.push("Caleb");
+		names.push("Susan");
+		System.out.println(names.pop());
+		System.out.println(names.pop());
+		System.out.println(names.pop());
 	}
 }
